@@ -9,7 +9,7 @@ docker build -t <USERNAME>/workshop01:1.0.0 .
 ```
 docker container run -p 8080:3000 <USERNAME>/workshop01:1.0.0
 ```
-Open [link](localhost:8080)
+Open [link](http://localhost:8080)
 
 ## Push
 ```

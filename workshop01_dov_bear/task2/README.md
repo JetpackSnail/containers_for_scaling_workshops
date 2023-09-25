@@ -37,3 +37,8 @@ docker run -d \
   -p 3306:3306 \
   stackupiss/northwind-db:v1
 ```
+
+## Run docker compose
+```
+docker-compose up -d
+```

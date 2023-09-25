@@ -1,0 +1,27 @@
+version: '3.6'
+
+volumes:
+  data:
+
+networks:
+  mynet:
+
+services:
+  myapp:
+    image: stackupiss/northwind-app:v1
+    container_name: myapp
+    networks:
+      - mynet
+    ports:
+      - 8080:3000
+    environment:
+      - DB_HOST=mydb
+      - DB_USER=root
+      - DB_PASSWORD=changeit
+  mydb:
+    image: stackupiss/northwind-db:v1
+    container_name: mydb
+    networks:
+      - mynet
+    ports:
+      - 3306:3306

@@ -33,8 +33,7 @@ docker run -d \
 docker run -d \
   --name mydb \
   --network mynet \
-  -v data:/var/lib/mysql \
-  -p 3306:3306 \
+  --mount type=volume,src=data,dst=/var/lib/mysql \
   stackupiss/northwind-db:v1
 ```
 

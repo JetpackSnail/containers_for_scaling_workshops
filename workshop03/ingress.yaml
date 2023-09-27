@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myingress
+  namespace: codeserver
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: code-188.166.197.57.nip.io
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: codeserver-svc
+            port:
+              number: 8443
